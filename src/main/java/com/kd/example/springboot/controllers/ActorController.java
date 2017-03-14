@@ -1,5 +1,7 @@
 package com.kd.example.springboot.controllers;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.kd.example.springboot.model.Actor;
-import com.kd.example.springboot.rabbitmq.sync.RabbitQueueConsumer;
-import com.kd.example.springboot.rabbitmq.sync.RabbitQueueProducer;
+import com.kd.example.springboot.rabbitmq.RabbitQueueConsumer;
+import com.kd.example.springboot.rabbitmq.RabbitQueueProducer;
 
 @RestController
 public class ActorController {
@@ -25,7 +27,7 @@ public class ActorController {
 
 	@RequestMapping("/user/get/{id}")
 
-	public Object getUser(@PathVariable("id") long id) {
+	public Object getUser(@PathVariable("id") long id) throws IOException {
 		Actor actor = new Actor(id, "kdmalviyan", "kdmalviyan@gmail.com", "Kuldeep", "Singh");
 		producer.produce(actor, "hello.world.queue");
 		return consumer.consume("hello.world.queue");

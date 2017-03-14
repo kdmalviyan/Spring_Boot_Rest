@@ -1,3 +1,10 @@
+/target/classes/com/kd/example/springboot/constants/Constants$ORDER.class
+/target/classes/com/kd/example/springboot/constants/Constants$RABBIT_QUEUE.class
+/target/classes/com/kd/example/springboot/constants/Constants.class
+/target/classes/com/kd/example/springboot/rabbitmq/InitializeRabbitMQ.class
+/target/classes/com/kd/example/springboot/rabbitmq/RabbitQueueConsumer$1.class
+/target/classes/com/kd/example/springboot/rabbitmq/RabbitQueueConsumer.class
+/target/classes/com/kd/example/springboot/rabbitmq/RabbitQueueProducer.class
 /target/classes/com/kd/example/springboot/controllers/OrderController.class
 /target/classes/com/kd/example/springboot/model/Order.class
 /target/classes/application.properties
