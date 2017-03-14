@@ -10,17 +10,26 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.kd.example.springboot.constants.Constants;
+import com.rabbitmq.client.Channel;
+
 @Configuration
 public class RabbitConfiguration {
 
-	private final String defaultQueueName = "hello.world.queue";
+	private final String defaultQueueName = Constants.RABBIT_QUEUE.DEFAULT_QUEUE_NAME;
 
 	@Bean
 	public ConnectionFactory connectionFactory() {
-		CachingConnectionFactory connectionFactory = new CachingConnectionFactory("localhost");
-		connectionFactory.setUsername("guest");
-		connectionFactory.setPassword("guest");
+		CachingConnectionFactory connectionFactory = new CachingConnectionFactory(Constants.RABBIT_QUEUE.HOST);
+		connectionFactory.setUsername(Constants.RABBIT_QUEUE.USERNAME);
+		connectionFactory.setPassword(Constants.RABBIT_QUEUE.PASSWORD);
 		return connectionFactory;
+	}
+
+	@Bean
+	public Channel createChannel() {
+		Channel channel = connectionFactory().createConnection().createChannel(true);
+		return channel;
 	}
 
 	@Bean
