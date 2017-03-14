@@ -5,7 +5,7 @@ public class Actor {
 		super();
 	}
 
-	public Actor(int id, String username, String email, String fName, String lName) {
+	public Actor(long id, String username, String email, String fName, String lName) {
 		super();
 		this.username = username;
 		this.email = email;
@@ -14,7 +14,7 @@ public class Actor {
 		this.id = id;
 	}
 
-	private int id;
+	private long id;
 	private String username;
 	private String email;
 	private String fName;
@@ -52,11 +52,11 @@ public class Actor {
 		this.lName = lName;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 }

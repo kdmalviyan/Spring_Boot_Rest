@@ -1,3 +1,10 @@
+/target/classes/application.properties
+/target/classes/com/kd/example/springboot/config/PropertiesConfiguration.class
+/target/classes/com/kd/example/springboot/rabbitmq/configuration/RabbitConfiguration.class
+/target/classes/com/kd/example/springboot/rabbitmq/sync/RabbitClient.class
+/target/classes/com/kd/example/springboot/rabbitmq/sync/RabbitQueueConsumer.class
+/target/classes/com/kd/example/springboot/rabbitmq/sync/RabbitQueueProducer.class
+/target/classes/rabbit-config.properties
 /.classpath
 /.project
 /.settings/org.eclipse.jdt.core.prefs
