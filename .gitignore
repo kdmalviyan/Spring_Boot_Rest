@@ -1,3 +1,5 @@
+/target/classes/com/kd/example/springboot/controllers/OrderController.class
+/target/classes/com/kd/example/springboot/model/Order.class
 /target/classes/application.properties
 /target/classes/com/kd/example/springboot/config/PropertiesConfiguration.class
 /target/classes/com/kd/example/springboot/rabbitmq/configuration/RabbitConfiguration.class
